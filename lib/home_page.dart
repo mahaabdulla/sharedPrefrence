@@ -1,4 +1,7 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
+import 'package:local_storag_app/user.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'dart:developer' as dev;
 
@@ -24,8 +27,15 @@ class _HomePageState extends State<HomePage> {
               onPressed: () async {
                 SharedPreferences sharedPreferences =
                     await SharedPreferences.getInstance();
-                sharedPreferences.setString("name", 'maha');
-                dev.log('${sharedPreferences.setString("name", 'maha')}');
+                // sharedPreferences.setString("name", 'maha');
+                UserModel user = UserModel(1, "Ahmed", 50);
+                sharedPreferences.setString(
+                  "user",
+                  json.encode(user.toString()),
+                );
+                dev.log(
+                  '${sharedPreferences.setString("user", json.encode(user.toString()))}',
+                );
               },
               child: Text("SAVE"),
             ),
