@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:local_storag_app/cache_helper.dart';
 import 'package:local_storag_app/home_page.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await CacheHelper.init();
   runApp(const MyApp());
 }
 

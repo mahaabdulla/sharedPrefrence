@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
+import 'package:local_storag_app/cache_helper.dart';
 import 'package:local_storag_app/user.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'dart:developer' as dev;
@@ -25,38 +26,38 @@ class _HomePageState extends State<HomePage> {
             Text(content, style: TextStyle(fontSize: 30, color: Colors.red)),
             ElevatedButton(
               onPressed: () async {
-                SharedPreferences sharedPreferences =
-                    await SharedPreferences.getInstance();
-                // sharedPreferences.setString("name", 'maha');
                 UserModel user = UserModel(1, "Ahmed", 50);
-                sharedPreferences.setString(
-                  "user",
-                  json.encode(user.toString()),
-                );
-                dev.log(
-                  '${sharedPreferences.setString("user", json.encode(user.toString()))}',
-                );
+
+                CacheHelper.setUser(user);
+                print('DONE');
               },
               child: Text("SAVE"),
             ),
             SizedBox(height: 10),
             ElevatedButton(
               onPressed: () async {
-                SharedPreferences sharedPreferences =
-                    await SharedPreferences.getInstance();
-                setState(() {
-                  content = sharedPreferences.getString("name") ?? "";
-                });
-                dev.log('  ${sharedPreferences.getString("name")}');
+                content =
+                    CacheHelper.getString('name') ?? "You do not Enter Value";
+                UserModel? user = CacheHelper.getUser();
+                // String? encodeUser = CacheHelper.getString('user');
+
+                // if (encodeUser == null) {
+                //   content = "No User Data";
+                // } else {
+                //   // Map<String, dynamic> userMap = json.decode(encodeUser);
+                //   UserModel user = UserModel.fromJson(json.decode(encodeUser));
+                //   content = user.name;
+                // }
+                setState(() {});
               },
               child: Text("LOAD"),
             ),
             SizedBox(height: 10),
             ElevatedButton(
               onPressed: () async {
-                SharedPreferences sharedPreferences =
-                    await SharedPreferences.getInstance();
-                await sharedPreferences.remove("name");
+                // SharedPreferences sharedPreferences =
+                //     await SharedPreferences.getInstance();
+                CacheHelper.removeAt("name");
                 dev.log(content);
                 setState(() {
                   content = "";
