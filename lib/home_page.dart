@@ -1,9 +1,7 @@
 import 'dart:convert';
-
 import 'package:flutter/material.dart';
 import 'package:local_storag_app/cache_helper.dart';
 import 'package:local_storag_app/user.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 import 'dart:developer' as dev;
 
 class HomePage extends StatefulWidget {
@@ -63,7 +61,7 @@ class _HomePageState extends State<HomePage> {
               onPressed: () async {
                 // SharedPreferences sharedPreferences =
                 //     await SharedPreferences.getInstance();
-                CacheHelper.removeAt("name");
+                CacheHelper.removeAt("user");
                 dev.log(content);
                 setState(() {
                   content = "";
