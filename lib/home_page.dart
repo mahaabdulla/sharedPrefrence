@@ -39,6 +39,12 @@ class _HomePageState extends State<HomePage> {
                 content =
                     CacheHelper.getString('name') ?? "You do not Enter Value";
                 UserModel? user = CacheHelper.getUser();
+
+                if (user == null) {
+                  content = "No User Data";
+                } else {
+                  content = user.name;
+                }
                 // String? encodeUser = CacheHelper.getString('user');
 
                 // if (encodeUser == null) {
