@@ -15,3 +15,9 @@ Features
     Simple and intuitive user interface
 
     Lightweight and easy to understand code structure
+
+Languages
+
+    UI supports both English and Arabic
+
+    تصميم بسيط وسهل الاستخدام للمستخدم العربي
