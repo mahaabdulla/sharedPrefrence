@@ -1,5 +1,9 @@
-# sharedPrefrence
+SharedPreference App
 
-This simple App is about using SheardPrefrence Packeg
- -store data local
- -freindly UI design
+This simple app demonstrates how to use the shared_preferences package in Flutter to:
+
+    Store data locally on the device
+
+    Maintain data persistence between app sessions
+
+    Provide a clean and user-friendly UI design
