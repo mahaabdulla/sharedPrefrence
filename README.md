@@ -21,3 +21,10 @@ Languages
     UI supports both English and Arabic
 
     تصميم بسيط وسهل الاستخدام للمستخدم العربي
+Getting Started
+
+    Clone the repository
+
+    Run flutter pub get to install dependencies
+
+    Launch the app using flutter run
