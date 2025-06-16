@@ -7,3 +7,11 @@ This simple app demonstrates how to use the shared_preferences package in Flutte
     Maintain data persistence between app sessions
 
     Provide a clean and user-friendly UI design
+
+Features
+
+    Save and retrieve data using SharedPreferences
+
+    Simple and intuitive user interface
+
+    Lightweight and easy to understand code structure
