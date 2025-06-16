@@ -28,3 +28,7 @@ Getting Started
     Run flutter pub get to install dependencies
 
     Launch the app using flutter run
+
+Dependencies
+
+    shared_preferences
