@@ -1,2 +1,2 @@
 # sharedPrefrence
-this app is about using SheardPrefrence Pacege
+this app is about using SheardPrefrence Packeg
